@@ -13,20 +13,16 @@ operations = {
 }
 
 printer = TextPrint()
-print("Welcome to the calculator system")
-print("This system can perform addition, subtraction, multiplication, and division")
-print("Please enter two numbers and the operation you want to perform, for exit type 'exit'")
+printer.print_welcome()
 
 
 while True:
     try:
         a = input("Enter first number: ")
-        if a == 'exit':
-            print("Exiting, bye bye..")
+        if printer.print_exit(a):
             break
         b = input("Enter second number: ")
-        if b == 'exit':
-            print("Exiting, bye bye..")
+        if printer.print_exit(b):
             break
         operation = input("Enter add, sub, mul, div: ").strip().lower()
         a = float(a)
